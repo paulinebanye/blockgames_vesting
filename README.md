@@ -1,4 +1,4 @@
-# BLOCKGAMES INTERNSHIP TASK 3 - TOKENS
+# BLOCKGAMES INTERNSHIP TASK 5 - STAKING & VESTING
 
 ## BRIEF
 Create a simple user UI/Frontend that interacts with a staking/vesting contract
