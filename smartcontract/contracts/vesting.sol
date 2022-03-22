@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -16,7 +16,8 @@ contract PlynToken is ERC20, Ownable {
 
     mapping(address => uint256) internal stakes;
     mapping(address => uint256) internal rewards;
-    mapping(address => uint) public dueDate;
+    mapping(
+        address => uint) public dueDate;
     mapping(address => uint256) internal locked;
 
 
