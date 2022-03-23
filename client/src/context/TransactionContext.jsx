@@ -15,12 +15,47 @@ const createEthereumContract = () => {
   return transactionsContract;
 };
 
+const buytoken = async(address, tokens) => {
+  const contract = createEthereumContract();
+  const options = {value: ethers.utils.parseEther(tokens)};
+  await contract.buyToken(address, options);
+}
+
+const staketoken = async(tokens) => {
+  const contract = createEthereumContract();
+  await contract.createStake(tokens);
+}
+
+const unstaketoken = async(tokens) => {
+  const contract = createEthereumContract();
+  await contract.removeStake(tokens);
+}
+
+const claimtoken = async() => {
+  const contract = createEthereumContract();
+  await contract.claimReward();
+}
+
+const staked = async() => {
+  const contract = createEthereumContract();
+  const staked = await contract.stakeOf();
+  return staked
+}
+
+const stakebalance = async(address) => {
+  const contract = createEthereumContract();
+  const balance = await contract.balanceOf(address);
+  return balance
+}
+
+
 export const TransactionsProvider = ({ children }) => {
-  const [formData, setformData] = useState({ addressTo: "", amount: "", keyword: "", message: "" });
+  const [formData, setformData] = useState({ addressTo: "", amount: "" });
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
   const [transactions, setTransactions] = useState([]);
+  const [stakeAccount, setStakeAccount] = useState("");
 
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
@@ -37,8 +72,8 @@ export const TransactionsProvider = ({ children }) => {
           addressTo: transaction.receiver,
           addressFrom: transaction.sender,
           timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
-          message: transaction.message,
-          keyword: transaction.keyword,
+          // message: transaction.message,
+          // keyword: transaction.keyword,
           amount: parseInt(transaction.amount._hex) / (10 ** 18)
         }));
 
@@ -156,6 +191,12 @@ export const TransactionsProvider = ({ children }) => {
         sendTransaction,
         handleChange,
         formData,
+        buytoken,
+        staketoken,
+        unstaketoken,
+        claimtoken,
+        staked,
+        stakebalance,
       }}
     >
       {children}

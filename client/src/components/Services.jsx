@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import { BsShieldFillCheck } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { RiHeart2Fill } from "react-icons/ri";
+import { TransactionContext } from "../context/TransactionContext";
 
 const ServiceCard = ({ color, title, icon, subtitle }) => (
   <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
@@ -70,6 +71,7 @@ const Circle =()=> {
 
 
 const AvailableStaked =()=>{
+  const {stakebalance} = useContext(TransactionContext)
   return (
     <div className="flex space-x-6 justify-center items-center">
       <div className="space-y-1">
@@ -78,45 +80,97 @@ const AvailableStaked =()=>{
       </div>
       <div className="space-y-1">
         <p className={style.ava}>18.1010(18%)</p>
-        <p className={style.ava}>73.4910(1%)</p>
+        <p className={style.ava}> {stakebalance} </p>
       </div>
     </div>
   );
 }
 
 const Payment = () => {
-  const pop = () => {
- Swal.fire({
-   title: "Buy Token",
-   html: `<input type="text" id=" class="" placeholder="Enter Address">
-  <input type="text" id="password" class="" placeholder="Enter Amount" >`,
-  
-   confirmButtonText: "Send",
- })
+  const {buytoken, staketoken, unstaketoken, claimtoken} = useContext(TransactionContext)
+  const pop = async(type) => {
+    if (type === "buy") {
+      const { value: formValues } = await Swal.fire({
+        title: "Buy Token",
+        html:
+          '<input type="text" id="address" class="" placeholder="Enter Address">' +
+          '<input type="text" id="amount" class="" placeholder="Enter Amount">',
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById("address").value,
+            document.getElementById("amount").value,
+          ]
+        }
+      })
+      if (formValues) {
+        buytoken(formValues[0], formValues[1])
+      }
+    }
+    else if (type === "stake") {
+      const { value: formValues } = await Swal.fire({
+        title: "Stake Token",
+        html:
+          '<input type="text" id="amount" class="" placeholder="Enter Amount">',
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById("amount").value,
+          ]
+        }
+      })
+      if (formValues) {
+        staketoken(parseInt(formValues[0]))
+      }
+    }
+    else if (type === "unstake") {
+      const { value: formValues } = await Swal.fire({
+        title: "Unstake Token",
+        html:
+          '<input type="text" id="amount" class="" placeholder="Enter Amount">',
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById("amount").value,
+          ]
+        }
+      })
+      if (formValues) {
+        unstaketoken(formValues[0])
+      }
+    }
+    else if (type === "claim") {
+      await Swal.fire({
+        title: "Claim Token",
+        html:"<p>Claim your rewards</p>",
+      })
+      claimtoken()
+    }
 };
+
   return (
     <div className="  flex-col flex space-y-5 justify-center items-center  ">
       <div
-        onClick={() => pop()}
+        onClick={() => pop("buy")}
         className="  w-[18rem] px-[6.5rem] m-4 py-[0.5rem]  bg-blue-500 rounded-lg text-gray-100    font-semibold cursor-pointer"
       >
         Buy Token
       </div>
 
       <div
-        onClick={() => pop()}
+        onClick={() => pop("stake")}
         className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14 ring-1  rounded-lg text-gray-100  font-semibold"
       >
         Stake
       </div>
       <div
-        onClick={() => pop()}
+        onClick={() => pop("claim")}
         className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14  bg-yellow-600 rounded-lg text-gray-100  font-semibold"
       >
         claim
       </div>
       <div
-        onClick={() => pop()}
+        onClick={() => pop("unstake")}
         className=" w-[18rem] px-[7.3rem] m-3 cursor-pointer py-[0.4rem]   bg-red-600 rounded-lg text-gray-100  font-semibold"
       >
         unstake

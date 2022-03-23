@@ -1,4 +1,4 @@
-import abi from "./Transactions.json";
+import abi from "./PlynToken.json";
 
-export const contractAddress = "0xfCCF80344a668b72ac4Be23513F0E9E4a35C84fA";
+export const contractAddress = "0x2E6f309334dBDf065c9B39Aa63cdF69870B7A365";
 export const contractABI = abi.abi;
