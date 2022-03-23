@@ -8,3 +8,4 @@ verify
 #Hardhat files
 cache
 artifacts
+.vscode
