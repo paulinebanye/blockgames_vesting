@@ -71,7 +71,7 @@ const Circle =()=> {
 
 
 const AvailableStaked =()=>{
-  const {stakebalance} = useContext(TransactionContext)
+  // const {stakebalance} = useContext(TransactionContext)
   return (
     <div className="flex space-x-6 justify-center items-center">
       <div className="space-y-1">

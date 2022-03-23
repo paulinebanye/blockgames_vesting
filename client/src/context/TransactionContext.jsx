@@ -42,11 +42,11 @@ const staked = async() => {
   return staked
 }
 
-const stakebalance = async(address) => {
-  const contract = createEthereumContract();
-  const balance = await contract.balanceOf(address);
-  return balance
-}
+// const stakebalance = async(address) => {
+//   const contract = createEthereumContract();
+//   const balance = await contract.balanceOf(address);
+//   return balance
+// }
 
 
 export const TransactionsProvider = ({ children }) => {
@@ -55,7 +55,7 @@ export const TransactionsProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [transactionCount, setTransactionCount] = useState(localStorage.getItem("transactionCount"));
   const [transactions, setTransactions] = useState([]);
-  const [stakeAccount, setStakeAccount] = useState("");
+  // const [stakeAccount, setStakeAccount] = useState("");
 
   const handleChange = (e, name) => {
     setformData((prevState) => ({ ...prevState, [name]: e.target.value }));
