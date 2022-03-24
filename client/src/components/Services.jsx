@@ -196,13 +196,13 @@ const Services = () => (
           color="bg-[#F84550]"
           title="Fastest transactions"
           icon={<RiHeart2Fill fontSize={18} className="text-white" />}
-          subtitle="Transfer speeds are unmatched. Coins are received within seconds"
+          subtitle="Transfer coins to other addresses swiftly. Coins are received within seconds"
         />
         <ServiceCard
           color="bg-[#2952E3]"
           title="Transaction History"
           icon={<BsShieldFillCheck fontSize={18} className="text-white" />}
-          subtitle="View logs of all transfers for up to a year at the click of a button."
+          subtitle="View logs of all your transactions for up to a year and recieve a printout in your inbox at the click of a button"
         />
       </div>
     </div>
