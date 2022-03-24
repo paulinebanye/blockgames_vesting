@@ -42,11 +42,11 @@ const staked = async() => {
   return staked
 }
 
-// const stakebalance = async(address) => {
-//   const contract = createEthereumContract();
-//   const balance = await contract.balanceOf(address);
-//   return balance
-// }
+const stakebalance = async(address) => {
+  const contract = createEthereumContract();
+  const balance = await contract.balanceOf(address);
+  return balance
+}
 
 
 export const TransactionsProvider = ({ children }) => {
