@@ -20,4 +20,4 @@ Create a simple user UI/Frontend that interacts with a staking/vesting contract
 
 ## VERIFIED CONTRACT ADDRESSES
 Vesting contract: https://rinkeby.etherscan.io/address/0x2E6f309334dBDf065c9B39Aa63cdF69870B7A365#code
-Hosted domain: https://vesting-ui.vercel.app/
+Hosted domain: https://lynntoken-ui.vercel.app/
