@@ -60,7 +60,7 @@ const Welcome = () => {
             <div className="flex space-x-4 my-5">
               <button
                 type="button"
-                className="flex flex-row justify-center items-center my-5 hover:bg-[purple] bg-[blue] p-3 rounded-full cursor-pointer hover:bg-[#2546bd] font-extrabold"
+                className="flex flex-row justify-center items-center my-5 hover:bg-[purple] bg-[orange] p-3 rounded-full cursor-pointer hover:bg-[#2546bd] font-extrabold"
               >
                 <a
                   className="text-white text-l font-extrabold"
