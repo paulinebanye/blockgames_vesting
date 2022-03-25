@@ -12,24 +12,19 @@ const Footer = () => (
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
       <div class="socials-logo">
         <div className="flex space-x-4 my-5">
-          <button
-            type="button"
-            className="flex flex-row justify-center items-center my-5 hover:bg-[purple] bg-[orange] p-3 rounded-full cursor-pointer hover:bg-[#2546bd] font-extrabold"
-            >
-            <a
-              className="text-white text-l font-extrabold"
-              class="hire-me-btn"
-              href="mailto:paulinebanye@gmail.com"
-              target="blank"
-              class="hire-me-content"
-            >
-              Get in touch! <i class="fas fa-arrow-right font-extrabold"></i>
-            </a>
-          </button>
+          <a
+            className="text-white text-l font-extrabold"
+            class="hire-me-btn"
+            href="mailto:paulinebanye@gmail.com"
+            target="blank"
+            class="hire-me-content"
+          >
+            Get in touch! <i class="fas fa-arrow-right font-extrabold"></i>
+          </a>
             <span className="flex space-x-4  my-5">
-              <SocialIcon bgColor="white" url="https://github.com/pauline-banye" />
-              <SocialIcon bgColor="white" url="https://twitter.com/PauLynn_Bee" />
-              <SocialIcon bgColor="white" url="https://www.linkedin.com/in/paulinebanye/" />
+              <SocialIcon bgColor="grey" url="https://github.com/pauline-banye" />
+              <SocialIcon url="https://twitter.com/PauLynn_Bee" />
+              <SocialIcon url="https://www.linkedin.com/in/paulinebanye/" />
             </span>
           </div>
         </div>

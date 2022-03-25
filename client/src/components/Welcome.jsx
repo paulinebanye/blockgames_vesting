@@ -73,9 +73,9 @@ const Welcome = () => {
                 </a>
               </button>
                 <span className="flex space-x-4  my-5">
-                  <SocialIcon bgColor="white" url="https://github.com/pauline-banye" />
-                  <SocialIcon bgColor="white" url="https://twitter.com/PauLynn_Bee" />
-                  <SocialIcon bgColor="white" url="https://www.linkedin.com/in/paulinebanye/" />
+                  <SocialIcon bgColor="grey" url="https://github.com/pauline-banye" />
+                  <SocialIcon url="https://twitter.com/PauLynn_Bee" />
+                  <SocialIcon url="https://www.linkedin.com/in/paulinebanye/" />
                 </span>
             </div>
           </div>
