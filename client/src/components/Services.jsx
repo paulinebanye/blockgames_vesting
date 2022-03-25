@@ -144,26 +144,26 @@ return (
   <div className="  flex-col flex space-y-5 justify-center items-center  ">
     <div
       onClick={() => pop("buy")}
-      className="  w-[18rem] px-[6.5rem] m-4 py-[0.5rem]  bg-blue-500 rounded-lg text-gray-100    font-semibold cursor-pointer"
+      className="  w-[18rem] px-[6.5rem] m-4 py-[0.5rem] ring-2 ring-blue-600 rounded-lg text-gray-100  font-semibold cursor-pointer"
     >
       Buy Token
     </div>
 
     <div
       onClick={() => pop("stake")}
-      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14 ring-1  bg-purple-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14 ring-2 ring-purple-600 rounded-lg text-gray-100  font-semibold"
     >
       Stake
     </div>
     <div
       onClick={() => pop("claim")}
-      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14  bg-yellow-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14  ring-2 ring-yellow-600 bg-yellow-600 rounded-lg text-gray-100  font-semibold"
     >
       claim
     </div>
     <div
       onClick={() => pop("unstake")}
-      className=" w-[18rem] px-[7.3rem] m-3 cursor-pointer py-[0.4rem]   bg-red-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.3rem] m-3 cursor-pointer py-[0.4rem] ring-2 ring-red-600 bg-red-600 rounded-lg text-gray-100  font-semibold"
     >
       unstake
     </div>
@@ -202,7 +202,7 @@ const Services = () => (
           color="bg-[#2952E3]"
           title="Transaction History"
           icon={<BsShieldFillCheck fontSize={18} className="text-white" />}
-          subtitle="View logs of all your transactions for up to a year and recieve a printout in your inbox at the click of a button"
+          subtitle="View logs and recieve a printout of all your transactions in your inbox at the click of a button"
         />
       </div>
     </div>
