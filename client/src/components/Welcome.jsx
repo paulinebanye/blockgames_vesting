@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { SiEthereum } from "react-icons/si";
 import { BsInfoCircle } from "react-icons/bs";
+import { SocialIcon } from "react-social-icons";
 
 import { TransactionContext } from "../context/TransactionContext";
 import { shortenAddress } from "../utils/shortenAddress";
@@ -24,11 +25,10 @@ const Welcome = () => {
   const { currentAccount, connectWallet, handleChange, sendTransaction, formData, isLoading } = useContext(TransactionContext);
 
   const handleSubmit = (e) => {
-    const { addressTo, amount, keyword, message } = formData;
+    const { addressTo, amount} = formData;
 
     e.preventDefault();
-
-    if (!addressTo || !amount || !keyword || !message) return;
+    if (!addressTo || !amount) return;
 
     sendTransaction();
   };
@@ -54,20 +54,44 @@ const Welcome = () => {
                 Connect Wallet
               </p>
             </button>
-          )}
+            )}
+          
+          <div class="socials-logo">
+            <div className="flex space-x-4 my-5">
+              <button
+                type="button"
+                className="flex flex-row justify-center items-center my-5 hover:bg-[purple] bg-[blue] p-3 rounded-full cursor-pointer hover:bg-[#2546bd] font-extrabold"
+              >
+                <a
+                  className="text-white text-l font-extrabold"
+                  class="hire-me-btn"
+                  href="mailto:paulinebanye@gmail.com"
+                  target="blank"
+                  class="hire-me-content"
+                >
+                  Get in touch! <i class="fas fa-arrow-right font-extrabold"></i>
+                </a>
+              </button>
+                <span className="flex space-x-4  my-5">
+                  <SocialIcon bgColor="white" url="https://github.com/pauline-banye" />
+                  <SocialIcon bgColor="white" url="https://twitter.com/PauLynn_Bee" />
+                  <SocialIcon bgColor="white" url="https://www.linkedin.com/in/paulinebanye/" />
+                </span>
+            </div>
+          </div>
 
           <div className="grid sm:grid-cols-3 grid-cols-2 w-full mt-10">
             <div className={`rounded-tl-2xl ${companyCommonStyles}`}>
               Reliability
             </div>
-            <div className={companyCommonStyles}>Security</div>
+            <div className={companyCommonStyles}>Low Fees</div>
             <div className={`sm:rounded-tr-2xl ${companyCommonStyles}`}>
-              Ethereum
+            Security
             </div>
             <div className={`sm:rounded-bl-2xl ${companyCommonStyles}`}>
               Web 3.0
             </div>
-            <div className={companyCommonStyles}>Low Fees</div>
+            <div className={companyCommonStyles}>Ethereum</div>
             <div className={`rounded-br-2xl ${companyCommonStyles}`}>
               Blockchain
             </div>
@@ -96,9 +120,6 @@ const Welcome = () => {
           <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
             <Input placeholder="Address To" name="addressTo" type="text" handleChange={handleChange} />
             <Input placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
-            <Input placeholder="Keyword (Gif)" name="keyword" type="text" handleChange={handleChange} />
-            <Input placeholder="Enter Message" name="message" type="text" handleChange={handleChange} />
-
             <div className="h-[1px] w-full bg-gray-400 my-2" />
 
             {isLoading

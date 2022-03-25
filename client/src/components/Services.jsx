@@ -38,7 +38,7 @@ const Staking = () => {
 const Header = () => {
   return (
     <div className={style.ava}>
-      <p>1 LTK = 1000$ </p>
+      <p className="pt-2">1 LTK = 1000$ </p>
     </div>
   );
 };
@@ -55,15 +55,14 @@ const Main = () => {
 
 const Circle = () => {
   return (
-    <div className="flex space-x-6 justify-center items-center">
+    <div className="flex space-x-6 justify-center items-center pt-5">
       <div className=" rounded-full w-52 h-52 bg-white flex justify-center  items-center ">
-        <div className="w-44 h-44 rounded-full bg-yellow-500 flex justify-center items-center">
+        <div className="w-44 h-44 rounded-full ring-bg-white bg-yellow-500 flex justify-center items-center">
           <div className="w-36 h-36 rounded-full bg-purple-900 flex flex-col space-y-1 justify-center items-center">
             <span className="text-sm text-gray-300  ">Total Balance</span>
-            {/* <span className="text-sm text-gray-300 "> {()} </span> */}
-            <p className="text-bold text-white font-bold text-2xl">89.004</p>
+            <p className="text-bold text-white font-bold text-2xl">92.030</p>
             <p className="text-bold text-white text-sm uppercase self-center font-bold">
-              KTK
+              LTK
             </p>
           </div>
         </div>
@@ -75,11 +74,11 @@ const Circle = () => {
 const AvailableStaked = () => {
   return (
     <div className="flex space-x-6 justify-center items-center">
-      <div className="space-y-1">
+      <div className="space-y-1 pt-2">
         <p className={style.ava}>Available</p>
         <p className={style.ava}>Staked</p>
       </div>
-      <div className="space-y-1">
+      <div className="space-y-1 pt-2">
         <p className={style.ava}>18.1010(18%)</p>
         <p className={style.ava}>73.4910(1%)</p>
       </div>
@@ -144,26 +143,26 @@ return (
   <div className="  flex-col flex space-y-5 justify-center items-center  ">
     <div
       onClick={() => pop("buy")}
-      className="  w-[18rem] px-[6.5rem] m-4 py-[0.5rem] ring-2 ring-blue-600 rounded-lg text-gray-100  font-semibold cursor-pointer"
+      className="  w-[18rem] px-[6.5rem] m-4 pt-1 py-[0.5rem] ring-2 ring-blue-700 bg-blue-700 hover:ring-blue-600 hover:bg-blue-600 rounded-lg text-gray-100  font-semibold cursor-pointer"
     >
       Buy Token
     </div>
 
     <div
       onClick={() => pop("stake")}
-      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14 ring-2 ring-purple-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14 ring-2 ring-purple-600 hover:bg-purple-600 rounded-lg text-gray-100  font-semibold"
     >
       Stake
     </div>
     <div
       onClick={() => pop("claim")}
-      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14  ring-2 ring-yellow-600 bg-yellow-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.7rem] m-4 cursor-pointer py-[0.4rem] p-14  ring-2 ring-yellow-500 bg-yellow-500 hover:ring-yellow-600 hover:bg-yellow-600 rounded-lg text-gray-100  font-semibold"
     >
       claim
     </div>
     <div
       onClick={() => pop("unstake")}
-      className=" w-[18rem] px-[7.3rem] m-3 cursor-pointer py-[0.4rem] ring-2 ring-red-600 bg-red-600 rounded-lg text-gray-100  font-semibold"
+      className=" w-[18rem] px-[7.3rem] m-3 cursor-pointer py-[0.4rem] ring-2 ring-pink-600 bg-pink-600 hover:ring-red-600 hover:bg-red-600 rounded-lg text-gray-100  font-semibold"
     >
       unstake
     </div>

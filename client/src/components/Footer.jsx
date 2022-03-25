@@ -1,6 +1,7 @@
 import React from "react";
+import { SocialIcon } from "react-social-icons"; 
 
-import logo from "../../images/logo.png";
+import logo from "../../images/icon.png";
 
 const Footer = () => (
   <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer">
@@ -9,16 +10,31 @@ const Footer = () => (
         <img src={logo} alt="logo" className="w-32" />
       </div>
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Contact Us</p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Information</p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">Wallets</p>
+      <div class="socials-logo">
+        <div className="flex space-x-4 my-5">
+          <button
+            type="button"
+            className="flex flex-row justify-center items-center my-5 hover:bg-[purple] bg-[blue] p-3 rounded-full cursor-pointer hover:bg-[#2546bd] font-extrabold"
+            >
+            <a
+              className="text-white text-l font-extrabold"
+              class="hire-me-btn"
+              href="mailto:paulinebanye@gmail.com"
+              target="blank"
+              class="hire-me-content"
+            >
+              Get in touch! <i class="fas fa-arrow-right font-extrabold"></i>
+            </a>
+          </button>
+            <span className="flex space-x-4  my-5">
+              <SocialIcon bgColor="white" url="https://github.com/pauline-banye" />
+              <SocialIcon bgColor="white" url="https://twitter.com/PauLynn_Bee" />
+              <SocialIcon bgColor="white" url="https://www.linkedin.com/in/paulinebanye/" />
+            </span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div className="flex justify-center items-center flex-col mt-5">
-      <p className="text-white text-sm text-center font-medium mt-2">Email:  paulinebanye@gmail.com    | Twitter:   https://twitter.com/PauLynn_Bee</p>
-    </div>
-
     <div className="sm:w-[90%] w-full h-[0.25px] bg-gray-400 mt-5 " />
 
     <div className="sm:w-[90%] w-full flex justify-between items-center mt-3">
